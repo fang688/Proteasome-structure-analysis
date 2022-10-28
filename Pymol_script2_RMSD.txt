@@ -1,0 +1,69 @@
+# Measure RMSD of ATP pocket in different states
+
+reinitialize
+set ignore_case, off
+
+load ATPpocket/EA1_Rpt1only_ATPpocket_6A.pdb, EA1_Rpt1only_ATPpocket_6A
+load ATPpocket/EA1_Rpt2only_ATPpocket_6A.pdb, EA1_Rpt2only_ATPpocket_6A
+load ATPpocket/EA1_Rpt6only_ATPpocket_6A.pdb, EA1_Rpt6only_ATPpocket_6A
+load ATPpocket/EA1_Rpt3only_ATPpocket_6A.pdb, EA1_Rpt3only_ATPpocket_6A
+load ATPpocket/EA1_Rpt4only_ATPpocket_6A.pdb, EA1_Rpt4only_ATPpocket_6A
+load ATPpocket/EA1_Rpt5only_ATPpocket_6A.pdb, EA1_Rpt5only_ATPpocket_6A
+
+load 6msb_EA1.cif       
+load 6msd_EA2.cif     
+load 6mse_EB.cif     
+load 6msg_EC1.cif     
+load 6msh_EC2.cif     
+load 6msj_ED1.cif     
+load 6msk_ED2.cif      
+
+align EA1_Rpt1only_ATPpocket_6A, 6msb_EA1 and chain A
+align EA1_Rpt2only_ATPpocket_6A, 6msb_EA1 and chain B
+align EA1_Rpt6only_ATPpocket_6A, 6msb_EA1 and chain C
+align EA1_Rpt3only_ATPpocket_6A, 6msb_EA1 and chain D
+align EA1_Rpt4only_ATPpocket_6A, 6msb_EA1 and chain E
+align EA1_Rpt5only_ATPpocket_6A, 6msb_EA1 and chain F
+
+align EA1_Rpt1only_ATPpocket_6A, 6msd_EA2 and chain A
+align EA1_Rpt2only_ATPpocket_6A, 6msd_EA2 and chain B
+align EA1_Rpt6only_ATPpocket_6A, 6msd_EA2 and chain C
+align EA1_Rpt3only_ATPpocket_6A, 6msd_EA2 and chain D
+align EA1_Rpt4only_ATPpocket_6A, 6msd_EA2 and chain E
+align EA1_Rpt5only_ATPpocket_6A, 6msd_EA2 and chain F
+
+align EA1_Rpt1only_ATPpocket_6A, 6mse_EB and chain A
+align EA1_Rpt2only_ATPpocket_6A, 6mse_EB and chain B
+align EA1_Rpt6only_ATPpocket_6A, 6mse_EB and chain C
+align EA1_Rpt3only_ATPpocket_6A, 6mse_EB and chain D
+align EA1_Rpt4only_ATPpocket_6A, 6mse_EB and chain E
+align EA1_Rpt5only_ATPpocket_6A, 6mse_EB and chain F
+
+align EA1_Rpt1only_ATPpocket_6A, 6msg_EC1 and chain A
+align EA1_Rpt2only_ATPpocket_6A, 6msg_EC1 and chain B
+align EA1_Rpt6only_ATPpocket_6A, 6msg_EC1 and chain C
+align EA1_Rpt3only_ATPpocket_6A, 6msg_EC1 and chain D
+align EA1_Rpt4only_ATPpocket_6A, 6msg_EC1 and chain E
+align EA1_Rpt5only_ATPpocket_6A, 6msg_EC1 and chain F
+
+align EA1_Rpt1only_ATPpocket_6A, 6msh_EC2 and chain A
+align EA1_Rpt2only_ATPpocket_6A, 6msh_EC2 and chain B
+align EA1_Rpt6only_ATPpocket_6A, 6msh_EC2 and chain C
+align EA1_Rpt3only_ATPpocket_6A, 6msh_EC2 and chain D
+align EA1_Rpt4only_ATPpocket_6A, 6msh_EC2 and chain E
+align EA1_Rpt5only_ATPpocket_6A, 6msh_EC2 and chain F
+
+align EA1_Rpt1only_ATPpocket_6A, 6msj_ED1 and chain A
+align EA1_Rpt2only_ATPpocket_6A, 6msj_ED1 and chain B
+align EA1_Rpt6only_ATPpocket_6A, 6msj_ED1 and chain C
+align EA1_Rpt3only_ATPpocket_6A, 6msj_ED1 and chain D
+align EA1_Rpt4only_ATPpocket_6A, 6msj_ED1 and chain E
+align EA1_Rpt5only_ATPpocket_6A, 6msj_ED1 and chain F
+
+align EA1_Rpt1only_ATPpocket_6A, 6msk_ED2 and chain A
+align EA1_Rpt2only_ATPpocket_6A, 6msk_ED2 and chain B
+align EA1_Rpt6only_ATPpocket_6A, 6msk_ED2 and chain C
+align EA1_Rpt3only_ATPpocket_6A, 6msk_ED2 and chain D
+align EA1_Rpt4only_ATPpocket_6A, 6msk_ED2 and chain E
+align EA1_Rpt5only_ATPpocket_6A, 6msk_ED2 and chain F
+

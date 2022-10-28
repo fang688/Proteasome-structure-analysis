@@ -1,0 +1,92 @@
+# Calculate SASA of each pair of ATPases
+# Use 6msb_EA1 as an example
+
+reinitialize
+set ignore_case, off
+
+load 6msb_EA1.cif
+
+# Define interfaces of each pair of ATPases
+
+sele EA1_Rpt1, 6msb_EA1 and chain A
+sele EA1_Rpt2, 6msb_EA1 and chain B
+sele EA1_Rpt6, 6msb_EA1 and chain C
+sele EA1_Rpt3, 6msb_EA1 and chain D
+sele EA1_Rpt4, 6msb_EA1 and chain E
+sele EA1_Rpt5, 6msb_EA1 and chain F
+
+save ATPinterface/EA1_Rpt1.pdb, EA1_Rpt1
+save ATPinterface/EA1_Rpt2.pdb, EA1_Rpt2
+save ATPinterface/EA1_Rpt6.pdb, EA1_Rpt6
+save ATPinterface/EA1_Rpt3.pdb, EA1_Rpt3
+save ATPinterface/EA1_Rpt4.pdb, EA1_Rpt4
+save ATPinterface/EA1_Rpt5.pdb, EA1_Rpt5
+
+sele EA1_Rpt1_159-C,EA1_Rpt1 and resi 159-502
+sele EA1_Rpt2_169-C,EA1_Rpt2 and resi 169-502
+sele EA1_Rpt6_133-C,EA1_Rpt6 and resi 133-502
+sele EA1_Rpt3_144-C,EA1_Rpt3 and resi 144-502
+sele EA1_Rpt4_117-C,EA1_Rpt4 and resi 117-502
+sele EA1_Rpt5_170-C,EA1_Rpt5 and resi 170-502
+sele EA1_Rpt1-6_Interface,EA1_Rpt1_159-C or EA1_Rpt2_169-C or EA1_Rpt6_133-C or EA1_Rpt3_144-C or EA1_Rpt4_117-C or EA1_Rpt5_170-C
+
+save ATPinterface/EA1_Rpt1_159-C.pdb,EA1_Rpt1_159-C 
+save ATPinterface/EA1_Rpt2_169-C.pdb,EA1_Rpt2_169-C 
+save ATPinterface/EA1_Rpt6_133-C.pdb,EA1_Rpt6_133-C
+save ATPinterface/EA1_Rpt3_144-C.pdb,EA1_Rpt3_144-C
+save ATPinterface/EA1_Rpt4_117-C.pdb,EA1_Rpt4_117-C 
+save ATPinterface/EA1_Rpt5_170-C.pdb,EA1_Rpt5_170-C
+save ATPinterface/EA1_Rpt1-6_Interface.pdb,EA1_Rpt1-6_Interface
+
+sele EA1_Rpt1_2_Interface,EA1_Rpt1_159-C or EA1_Rpt2_169-C
+sele EA1_Rpt2_6_Interface,EA1_Rpt2_169-C or EA1_Rpt6_133-C
+sele EA1_Rpt6_3_Interface,EA1_Rpt6_133-C or EA1_Rpt3_144-C
+sele EA1_Rpt3_4_Interface,EA1_Rpt3_144-C or EA1_Rpt4_117-C 
+sele EA1_Rpt4_5_Interface,EA1_Rpt4_117-C or EA1_Rpt5_170-C
+sele EA1_Rpt5_1_Interface,EA1_Rpt5_170-C or EA1_Rpt1_159-C
+
+save ATPinterface/EA1_Rpt1_2_Interface.pdb,EA1_Rpt1_2_Interface
+save ATPinterface/EA1_Rpt2_6_Interface.pdb,EA1_Rpt2_6_Interface
+save ATPinterface/EA1_Rpt6_3_Interface.pdb,EA1_Rpt6_3_Interface
+save ATPinterface/EA1_Rpt3_4_Interface.pdb,EA1_Rpt3_4_Interface
+save ATPinterface/EA1_Rpt4_5_Interface.pdb,EA1_Rpt4_5_Interface
+save ATPinterface/EA1_Rpt5_1_Interface.pdb,EA1_Rpt5_1_Interface
+
+
+# Calculate buried molecular surface area
+
+show stick, EA1_Rpt1_159-C and chain A and resi 501
+show stick, EA1_Rpt2_169-C and chain B and resi 501
+show stick, EA1_Rpt6_133-C and chain C and resi 501
+show stick, EA1_Rpt3_144-C and chain D and resi 501
+show stick, EA1_Rpt4_117-C and chain E and resi 401
+show stick, EA1_Rpt5_170-C and chain F and resi 501
+
+set dot_density, 2
+set dot_solvent, on
+
+show dots, EA1_Rpt1_159-C
+get_area EA1_Rpt1_159-C
+show dots, EA1_Rpt2_169-C
+get_area EA1_Rpt2_169-C
+show dots, EA1_Rpt6_133-C
+get_area EA1_Rpt6_133-C
+show dots, EA1_Rpt3_144-C
+get_area EA1_Rpt3_144-C
+show dots, EA1_Rpt4_117-C
+get_area EA1_Rpt4_117-C
+show dots, EA1_Rpt5_170-C
+get_area EA1_Rpt5_170-C
+
+show dots, EA1_Rpt1_2_Interface
+show dots, EA1_Rpt2_6_Interface
+show dots, EA1_Rpt6_3_Interface
+show dots, EA1_Rpt3_4_Interface
+show dots, EA1_Rpt4_5_Interface
+show dots, EA1_Rpt5_1_Interface
+get_area EA1_Rpt1_2_Interface
+get_area EA1_Rpt2_6_Interface
+get_area EA1_Rpt6_3_Interface
+get_area EA1_Rpt3_4_Interface
+get_area EA1_Rpt4_5_Interface
+get_area EA1_Rpt5_1_Interface

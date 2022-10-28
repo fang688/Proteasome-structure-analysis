@@ -1,0 +1,56 @@
+# Define ATP pocket in 6msb_EA1
+
+reinitialize
+set ignore_case, off
+
+load 6msb_EA1.cif
+
+sele EA1_Rpt1_AGS, 6msb_EA1 and chain A and resi 501
+sele EA1_Rpt1_ATPpocket_6A, 6msb_EA1 and chain A and resi 501 around 6
+sele EA1_Rpt1_ATPpocket_6A, EA1_Rpt1_AGS or EA1_Rpt1_ATPpocket_6A
+sele EA1_Rpt1only_ATPpocket_6A, EA1_Rpt1_ATPpocket_6A and chain A
+save ATPpocket/EA1_Rpt1_AGS.pdb, EA1_Rpt1_AGS
+save ATPpocket/EA1_Rpt1only_ATPpocket_6A.pdb, EA1_Rpt1only_ATPpocket_6A
+save ATPpocket/EA1_Rpt1_ATPpocket_6A.pdb, EA1_Rpt1_ATPpocket_6A
+
+sele EA1_Rpt2_AGS, 6msb_EA1 and chain B and resi 501
+sele EA1_Rpt2_ATPpocket_6A, 6msb_EA1 and chain B and resi 501 around 6
+sele EA1_Rpt2_ATPpocket_6A, EA1_Rpt2_AGS or EA1_Rpt2_ATPpocket_6A
+sele EA1_Rpt2only_ATPpocket_6A, EA1_Rpt2_ATPpocket_6A and chain B
+save ATPpocket/EA1_Rpt2_AGS.pdb, EA1_Rpt2_AGS
+save ATPpocket/EA1_Rpt2only_ATPpocket_6A.pdb, EA1_Rpt2only_ATPpocket_6A
+save ATPpocket/EA1_Rpt2_ATPpocket_6A.pdb, EA1_Rpt2_ATPpocket_6A
+
+sele EA1_Rpt6_AGS, 6msb_EA1 and chain C and resi 501
+sele EA1_Rpt6_ATPpocket_6A, 6msb_EA1 and chain C and resi 501 around 6
+sele EA1_Rpt6_ATPpocket_6A, EA1_Rpt6_AGS or EA1_Rpt6_ATPpocket_6A
+sele EA1_Rpt6only_ATPpocket_6A, EA1_Rpt6_ATPpocket_6A and chain C
+save ATPpocket/EA1_Rpt6_AGS.pdb, EA1_Rpt6_AGS
+save ATPpocket/EA1_Rpt6only_ATPpocket_6A.pdb, EA1_Rpt6only_ATPpocket_6A
+save ATPpocket/EA1_Rpt6_ATPpocket_6A.pdb, EA1_Rpt6_ATPpocket_6A
+
+sele EA1_Rpt3_AGS, 6msb_EA1 and chain D and resi 501
+sele EA1_Rpt3_ATPpocket_6A, 6msb_EA1 and chain D and resi 501 around 6
+sele EA1_Rpt3_ATPpocket_6A, EA1_Rpt3_AGS or EA1_Rpt3_ATPpocket_6A
+sele EA1_Rpt3only_ATPpocket_6A, EA1_Rpt3_ATPpocket_6A and chain D
+save ATPpocket/EA1_Rpt3_AGS.pdb, EA1_Rpt3_AGS
+save ATPpocket/EA1_Rpt3only_ATPpocket_6A.pdb, EA1_Rpt3only_ATPpocket_6A
+save ATPpocket/EA1_Rpt3_ATPpocket_6A.pdb, EA1_Rpt3_ATPpocket_6A
+
+sele EA1_Rpt4_AGS, 6msb_EA1 and chain E and resi 401
+sele EA1_Rpt4_ATPpocket_6A, 6msb_EA1 and chain E and resi 401 around 6
+sele EA1_Rpt4_ATPpocket_6A, EA1_Rpt4_AGS or EA1_Rpt4_ATPpocket_6A
+sele EA1_Rpt4only_ATPpocket_6A, EA1_Rpt4_ATPpocket_6A and chain E
+save ATPpocket/EA1_Rpt4_AGS.pdb, EA1_Rpt4_AGS
+save ATPpocket/EA1_Rpt4only_ATPpocket_6A.pdb, EA1_Rpt4only_ATPpocket_6A
+save ATPpocket/EA1_Rpt4_ATPpocket_6A.pdb, EA1_Rpt4_ATPpocket_6A
+
+sele EA1_Rpt5_AGS, 6msb_EA1 and chain F and resi 501
+sele EA1_Rpt5_ATPpocket_6A, 6msb_EA1 and chain F and resi 501 around 6
+sele EA1_Rpt5_ATPpocket_6A, EA1_Rpt5_AGS or EA1_Rpt5_ATPpocket_6A
+sele EA1_Rpt5only_ATPpocket_6A, EA1_Rpt5_ATPpocket_6A and chain F
+save ATPpocket/EA1_Rpt5_AGS.pdb, EA1_Rpt5_AGS
+save ATPpocket/EA1_Rpt5only_ATPpocket_6A.pdb, EA1_Rpt5only_ATPpocket_6A
+save ATPpocket/EA1_Rpt5_ATPpocket_6A.pdb, EA1_Rpt5_ATPpocket_6A
+
+
